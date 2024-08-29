@@ -14,11 +14,17 @@ public class PlayerController : MonoBehaviour
     public bool canShoot;
     public Transform shootPosition;
     public float coolDownTime;
+
+    [Header("Explosion")]
+    public GameObject explosion;
+    public float coolDownExplosion;
+    public bool canUseExplosion;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
+        canUseExplosion = true;
     }
 
     private void Update()
@@ -27,7 +33,13 @@ public class PlayerController : MonoBehaviour
         {
             canShoot = false;
             Instantiate(shoot, shootPosition.position, Quaternion.identity);
-            Invoke("CoolDown", coolDownTime);
+            Invoke("CoolDownShoot", coolDownTime);
+        }
+        if(Input.GetKeyDown(KeyCode.E) && canUseExplosion)
+        {
+            canUseExplosion = false;
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Invoke("CoolDownExplosion", coolDownExplosion);
         }
     }
 
@@ -44,8 +56,13 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + move * speed * Time.deltaTime);
     }
 
-    void CoolDown()
+    void CoolDownShoot()
     {
         canShoot = true;
+    }
+
+    void CoolDownExplosion()
+    {
+        canUseExplosion = true;
     }
 }

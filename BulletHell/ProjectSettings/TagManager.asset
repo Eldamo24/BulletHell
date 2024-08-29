@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Explosion
+  - PlayerShoot
+  - EnemyShoot
   layers:
   - Default
   - TransparentFX
@@ -42,9 +45,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ships
-    uniqueID: 2277151039
+  - name: Shoots
+    uniqueID: 689889497
     locked: 0
   - name: Explosion
     uniqueID: 836764487
+    locked: 0
+  - name: Ships
+    uniqueID: 2277151039
     locked: 0

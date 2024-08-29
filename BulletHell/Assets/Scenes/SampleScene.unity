@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 1656927881}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,6 +252,9 @@ MonoBehaviour:
   canShoot: 0
   shootPosition: {fileID: 1963108345}
   coolDownTime: 0.6
+  explosion: {fileID: 8194334234529413546, guid: d97e110d239e63c4cb90d3078d17d8ab, type: 3}
+  coolDownExplosion: 120
+  canUseExplosion: 0
 --- !u!212 &1656927879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -290,8 +293,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2017816257
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.7169812, g: 0.064257726, b: 0.32884896, a: 1}
