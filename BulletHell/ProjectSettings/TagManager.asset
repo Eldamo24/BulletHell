@@ -45,3 +45,6 @@ TagManager:
   - name: Ships
     uniqueID: 2277151039
     locked: 0
+  - name: Explosion
+    uniqueID: 836764487
+    locked: 0
