@@ -8,6 +8,8 @@ TagManager:
   - Explosion
   - PlayerShoot
   - EnemyShoot
+  - EnemyShootA
+  - EnemyShootB
   layers:
   - Default
   - TransparentFX
@@ -45,11 +47,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Shoots
-    uniqueID: 689889497
-    locked: 0
   - name: Explosion
     uniqueID: 836764487
+    locked: 0
+  - name: Shield
+    uniqueID: 745448649
+    locked: 0
+  - name: Shoots
+    uniqueID: 689889497
     locked: 0
   - name: Ships
     uniqueID: 2277151039

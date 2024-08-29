@@ -19,12 +19,18 @@ public class PlayerController : MonoBehaviour
     public GameObject explosion;
     public float coolDownExplosion;
     public bool canUseExplosion;
+
+    [Header("Shields")]
+    public GameObject shieldA;
+    public GameObject shieldB;
+    public bool activeShields;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
         canUseExplosion = true;
+        activeShields = false;
     }
 
     private void Update()
@@ -36,6 +42,10 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && canUseExplosion)
         {
             Explosion();
+        }
+        if(activeShields && Input.GetKeyDown(KeyCode.Q))
+        {
+            ShieldsController();
         }
     }
 
@@ -64,6 +74,20 @@ public class PlayerController : MonoBehaviour
         canUseExplosion = false;
         Instantiate(explosion, transform.position, Quaternion.identity);
         Invoke("CoolDownExplosion", coolDownExplosion);
+    }
+
+    void ShieldsController()
+    {
+        if (shieldA.activeSelf)
+        {
+            shieldA.SetActive(false);
+            shieldB.SetActive(true);
+        }
+        else
+        {
+            shieldA.SetActive(true);
+            shieldB.SetActive(false);
+        }
     }
 
     void CoolDownShoot()
