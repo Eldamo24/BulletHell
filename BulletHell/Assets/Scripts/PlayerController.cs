@@ -31,15 +31,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
-            canShoot = false;
-            Instantiate(shoot, shootPosition.position, Quaternion.identity);
-            Invoke("CoolDownShoot", coolDownTime);
+            Shoot();
         }
         if(Input.GetKeyDown(KeyCode.E) && canUseExplosion)
         {
-            canUseExplosion = false;
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            Invoke("CoolDownExplosion", coolDownExplosion);
+            Explosion();
         }
     }
 
@@ -54,6 +50,20 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         Vector2 move = transform.right * horizontal + transform.up * vertical;
         rb.MovePosition(rb.position + move * speed * Time.deltaTime);
+    }
+
+    void Shoot()
+    {
+        canShoot = false;
+        Instantiate(shoot, shootPosition.position, Quaternion.identity);
+        Invoke("CoolDownShoot", coolDownTime);
+    }
+
+    void Explosion()
+    {
+        canUseExplosion = false;
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Invoke("CoolDownExplosion", coolDownExplosion);
     }
 
     void CoolDownShoot()
