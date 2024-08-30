@@ -24,7 +24,11 @@ public class PlayerController : MonoBehaviour
     public GameObject shieldA;
     public GameObject shieldB;
     public bool activeShields;
-    
+
+    [Header("Saws")]
+    public GameObject saw1;
+    public GameObject saw2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,7 +37,7 @@ public class PlayerController : MonoBehaviour
         activeShields = false;
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
@@ -98,5 +102,11 @@ public class PlayerController : MonoBehaviour
     void CoolDownExplosion()
     {
         canUseExplosion = true;
+    }
+
+    public void ActiveSaws()
+    {
+        saw1.SetActive(true);
+        saw2.SetActive(true);
     }
 }
