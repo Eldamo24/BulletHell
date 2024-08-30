@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     [Header("Shields")]
     public GameObject shieldA;
     public GameObject shieldB;
-    public bool activeShields;
 
     [Header("Saws")]
     public GameObject saw1;
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canShoot = true;
         canUseExplosion = true;
-        activeShields = false;
+        shieldA.SetActive(true);
     }
 
     void Update()
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             Explosion();
         }
-        if(activeShields && Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             ShieldsController();
         }
