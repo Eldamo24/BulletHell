@@ -6,11 +6,10 @@ using UnityEngine;
 public class EndGamePanel : MonoBehaviour
 {
     public TMP_Text panelText;
-    public bool isWinner;
 
     void OnEnable()
     {
-        if (isWinner)
+        if (GameManager.instance.isWinner)
             panelText.text = "Victory";
         else
             panelText.text = "Defeat";
