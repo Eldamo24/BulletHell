@@ -30,5 +30,4 @@ public class EndGamePanel : MonoBehaviour
         UIController.instance.Menu();
     }
 
-
 }
