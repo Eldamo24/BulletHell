@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 981872535}
   m_Layer: 0
   m_Name: ShieldB
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 1008764535}
   m_Layer: 0
   m_Name: ShieldA
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1954,6 +1954,7 @@ MonoBehaviour:
   shieldB: {fileID: 981872531}
   saw1: {fileID: 1061177560}
   saw2: {fileID: 433973798}
+  life: 100
 --- !u!212 &1656927879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2219,6 +2220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creditsPanel: {fileID: 0}
   mainMenuPanel: {fileID: 0}
+  EndGamePanel: {fileID: 72969065}
+  InGameUI: {fileID: 2034654281}
   enemiesAmountText: {fileID: 1393029927}
 --- !u!1 &1963108344
 GameObject:

@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public GameObject saw1;
     public GameObject saw2;
 
+    public int life = 100;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +40,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(life <= 0)
+        {
+            GameManager.instance.CheckLoose();
+        }
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             Shoot();
@@ -107,5 +113,10 @@ public class PlayerController : MonoBehaviour
     {
         saw1.SetActive(true);
         saw2.SetActive(true);
+    }
+
+    public void TakeDamage()
+    {
+        life -= 10;
     }
 }

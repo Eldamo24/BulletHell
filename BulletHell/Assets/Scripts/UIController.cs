@@ -9,6 +9,8 @@ public class UIController : MonoBehaviour
     public static UIController instance;
     public GameObject creditsPanel;
     public GameObject mainMenuPanel;
+    public GameObject EndGamePanel;
+    public GameObject InGameUI;
     public TMP_Text enemiesAmountText;
     
     void Start()
@@ -47,5 +49,12 @@ public class UIController : MonoBehaviour
     public void UpdateEnemiesText()
     {
         enemiesAmountText.text = "Enemies Defeated: " + GameManager.instance.enemiesDefeated.ToString();
+    }
+
+    public void WinOrDefeat()
+    {
+        EndGamePanel.SetActive(true);
+        InGameUI.SetActive(false);
+        Time.timeScale = 0f;
     }
 }

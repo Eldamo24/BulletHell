@@ -9,7 +9,7 @@ public class EndGamePanel : MonoBehaviour
 
     void OnEnable()
     {
-        if (GameManager.instance.isWinner)
+        if(GameManager.instance.isWinner)
             panelText.text = "Victory";
         else
             panelText.text = "Defeat";

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
- 
     public GameObject bullet;
     public float bulletSpeed = 1f;
     private float cooldown = 0f;

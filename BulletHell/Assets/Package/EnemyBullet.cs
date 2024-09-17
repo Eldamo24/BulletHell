@@ -51,6 +51,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage();
             Destroy(gameObject);
         }
     }
