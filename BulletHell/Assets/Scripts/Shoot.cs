@@ -22,6 +22,7 @@ public class Shoot : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            collision.gameObject.GetComponent<Enemigo>().TakeDamage();
             Destroy(gameObject);
         }
     }
