@@ -25,7 +25,7 @@ public class Enemigo : MonoBehaviour
 
     public void OnDestroy()
     {
-        //spawner.EnemyDestroyed();
+        spawner.EnemyDestroyed();
         GameManager.instance.AddEnemyDefeated();
     }
 }
