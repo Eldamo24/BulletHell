@@ -68,7 +68,10 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector2 move = transform.right * horizontal + transform.up * vertical;
-        rb.MovePosition(rb.position + move * speed * Time.deltaTime);
+        move = rb.position + move * speed * Time.deltaTime;
+        move.x = Mathf.Clamp(move.x, -8f, 8f);
+        move.y = Mathf.Clamp(move.y, -4f, 4f);
+        rb.MovePosition(move);
     }
 
     void Shoot()

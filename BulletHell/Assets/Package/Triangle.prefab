@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnerCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 8335230994266026276, guid: a769023850eb9a24fb35fcdb8b1241c4, type: 3}
+      propertyPath: fireRate
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9072756645742163282, guid: a769023850eb9a24fb35fcdb8b1241c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

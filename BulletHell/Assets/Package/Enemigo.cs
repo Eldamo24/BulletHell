@@ -8,6 +8,7 @@ public class Enemigo : MonoBehaviour
 
     public int health = 100;
     public EnemySpawner spawner;
+    public IsOcuppied spawnPos;
 
     private void Awake()
     {
@@ -26,6 +27,8 @@ public class Enemigo : MonoBehaviour
     public void OnDestroy()
     {
         spawner.EnemyDestroyed();
+        spawnPos.IsTheSpawnerOcuppied();
+        spawnPos = null;
         GameManager.instance.AddEnemyDefeated();
     }
 }
