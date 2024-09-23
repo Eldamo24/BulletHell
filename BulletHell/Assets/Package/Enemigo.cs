@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
 
-    public int health = 10;
+    public int health = 100;
     public EnemySpawner spawner;
 
     private void Awake()
@@ -14,9 +14,9 @@ public class Enemigo : MonoBehaviour
         spawner = FindObjectOfType<EnemySpawner>();
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        health -= 1;
+        health -= damage;
         if (health <= 0)
         {
             Destroy(gameObject);

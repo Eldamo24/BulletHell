@@ -118,5 +118,6 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         life -= 10;
+        UIController.instance.UpdateLifeText(life);
     }
 }

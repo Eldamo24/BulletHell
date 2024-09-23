@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeOfVision: 8.5
-  life: 5
+  life: 100
   player: {fileID: 0}
   initialPosition: {x: 0, y: 0, z: 0}
   rotationSpeed: 2
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ee43a80ba3f71428168eac2f80a1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 100
   spawner: {fileID: 0}
 --- !u!1 &7971205068402345265
 GameObject:

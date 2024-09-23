@@ -12,11 +12,13 @@ public class UIController : MonoBehaviour
     public GameObject EndGamePanel;
     public GameObject InGameUI;
     public TMP_Text enemiesAmountText;
+    public TMP_Text lifeText;
     
     void Start()
     {
         instance = this;
         UpdateEnemiesText();
+        UpdateLifeText(100);
     }
 
     public void PlayGame()
@@ -49,6 +51,11 @@ public class UIController : MonoBehaviour
     public void UpdateEnemiesText()
     {
         enemiesAmountText.text = "Enemies Defeated: " + GameManager.instance.enemiesDefeated.ToString();
+    }
+
+    public void UpdateLifeText(int life)
+    {
+        lifeText.text = "Life: " + life;
     }
 
     public void WinOrDefeat()

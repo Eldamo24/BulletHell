@@ -7,6 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     float speed = 10;
+    int damage = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,8 @@ public class Bullet : MonoBehaviour
         Enemigo enemy = collision.GetComponent<Enemigo>();
         if (enemy != null)
         {
-            enemy.TakeDamage();
-            Console.WriteLine(enemy.health);
+            enemy.TakeDamage(damage);
+            Debug.Log(enemy.health);
             Destroy(gameObject);//Busca la funcion accediendo al componente (script) de la bala.
         }
     }

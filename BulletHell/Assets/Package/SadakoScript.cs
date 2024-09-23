@@ -45,7 +45,7 @@ public class SadakoScript : MonoBehaviour
 
     }
 
-        public void OnDrawGizmosSelected()
+    public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, rangeOfVision);
