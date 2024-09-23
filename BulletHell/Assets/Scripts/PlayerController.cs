@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         canShoot = true;
         canUseExplosion = true;
         shieldA.SetActive(true);
+        shieldB.SetActive(false);
     }
 
     void Update()
