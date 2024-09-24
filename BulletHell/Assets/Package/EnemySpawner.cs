@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -29,9 +26,10 @@ public class EnemySpawner : MonoBehaviour
         if (!spawnPoint.gameObject.GetComponent<IsOcuppied>().isOcuppied)
         {
             int index = Random.Range(0, enemyPrefab.Length);
-            GameObject enemy =Instantiate(enemyPrefab[index], spawnPoint.position, spawnPoint.rotation);
+            GameObject enemy = Instantiate(enemyPrefab[index], spawnPoint.position, spawnPoint.rotation);
             enemy.GetComponent<Enemigo>().spawnPos = spawnPoint.GetComponent<IsOcuppied>();
-            spawnPoint.gameObject.GetComponent<IsOcuppied>().IsTheSpawnerOcuppied();
+            enemy.GetComponent<Enemigo>().spawnPos.IsTheSpawnerOcuppied();
+            //spawnPoint.gameObject.GetComponent<IsOcuppied>().IsTheSpawnerOcuppied();
             enemyCount++;
             enemyTotalCounter++;
         }

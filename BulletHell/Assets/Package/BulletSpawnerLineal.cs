@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletSpawnerLineal : MonoBehaviour
@@ -24,9 +21,7 @@ public class BulletSpawnerLineal : MonoBehaviour
         {
             Vector3 direction = (player.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-
             transform.rotation = Quaternion.Euler(0, 0, angle);
-
             timer += Time.deltaTime;
             if (timer > cooldown)
             {

@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,11 +24,11 @@ public class SpawnPowerUpManager : MonoBehaviour
 
     private void SpawnPowerUp()
     {
-        int percentage = UnityEngine.Random.Range(1, 101);
+        int percentage = Random.Range(1, 101);
         if(percentage >= luckyPercentage)
         {
-            int index = UnityEngine.Random.Range(0, powerUps.Count);
-            int indexSpawn = UnityEngine.Random.Range(0, spawnPoints.Count);
+            int index = Random.Range(0, powerUps.Count);
+            int indexSpawn = Random.Range(0, spawnPoints.Count);
             Instantiate(powerUps[index], spawnPoints[indexSpawn].position, Quaternion.identity);
         }
         waitTime = Time.time + coolDown;
