@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(life <= 0)
+        if (life <= 0)
         {
             GameManager.instance.CheckLoose();
         }
@@ -47,11 +47,11 @@ public class PlayerController : MonoBehaviour
         {
             Shoot();
         }
-        if(Input.GetKeyDown(KeyCode.E) && canUseExplosion)
+        if (Input.GetKeyDown(KeyCode.E) && canUseExplosion)
         {
             Explosion();
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ShieldsController();
         }
@@ -121,5 +121,14 @@ public class PlayerController : MonoBehaviour
     {
         life -= 10;
         UIController.instance.UpdateLifeText(life);
+    }
+
+    public void Health(int cure)
+    {
+        life += cure;
+        if (life >= 100)
+        {
+            life = 100;
+        }
     }
 }

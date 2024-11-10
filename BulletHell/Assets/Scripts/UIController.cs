@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     public static UIController instance;
+    public GameObject selectLevelPanel;
     public GameObject creditsPanel;
     public GameObject mainMenuPanel;
     public GameObject EndGamePanel;
@@ -21,17 +22,13 @@ public class UIController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Prototype");
+        mainMenuPanel.SetActive(false);
+        selectLevelPanel.SetActive(true);
     }
 
     public void ExitGame()
     {
         Application.Quit();
-    }
-
-    public void Menu()
-    {
-        SceneManager.LoadScene("MainMenu");
     }
 
     public void Credits()
@@ -40,10 +37,13 @@ public class UIController : MonoBehaviour
         mainMenuPanel.SetActive(false);
     }
 
-    public void Back()
+    public void Back(string panel)
     {
         mainMenuPanel.SetActive(true);
-        creditsPanel.SetActive(false);
+        if (panel == "Credits")
+            creditsPanel.SetActive(false);
+        else if (panel == "SelectLevel")
+            selectLevelPanel.SetActive(false);
     }
 
     public void UpdateEnemiesText()
@@ -61,5 +61,10 @@ public class UIController : MonoBehaviour
         EndGamePanel.SetActive(true);
         InGameUI.SetActive(false);
         Time.timeScale = 0f;
+    }
+
+    public void LoadSelectedScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - EnemyShootA
   - EnemyShootB
   - Shield
+  - Saw
   layers:
   - Default
   - TransparentFX
@@ -65,4 +66,7 @@ TagManager:
     locked: 0
   - name: Shoots
     uniqueID: 689889497
+    locked: 0
+  - name: Player
+    uniqueID: 4020579349
     locked: 0

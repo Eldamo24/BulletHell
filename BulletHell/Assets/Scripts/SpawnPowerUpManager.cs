@@ -8,6 +8,8 @@ public class SpawnPowerUpManager : MonoBehaviour
     private float luckyPercentage = 50;
     private float coolDown = 30;
     private float waitTime = 0;
+    public GameObject powerUp;
+    public float timeToDestroy = 20f;
 
     private void Start()
     {
@@ -29,8 +31,18 @@ public class SpawnPowerUpManager : MonoBehaviour
         {
             int index = Random.Range(0, powerUps.Count);
             int indexSpawn = Random.Range(0, spawnPoints.Count);
-            Instantiate(powerUps[index], spawnPoints[indexSpawn].position, Quaternion.identity);
+            powerUp = Instantiate(powerUps[index], spawnPoints[indexSpawn].position, Quaternion.identity);
+            powerUp.transform.parent = GameObject.Find("Grid").transform;
+            Invoke("DestroyPowerUp", timeToDestroy);
+            
         }
         waitTime = Time.time + coolDown;
     }
+
+    private void DestroyPowerUp()
+    {
+        Destroy(powerUp);
+    }
+
+
 }

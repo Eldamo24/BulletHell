@@ -13,9 +13,9 @@ public class EndGamePanel : MonoBehaviour
             panelText.text = "Defeat";
     }
 
-    public void ResetGame()
+    public void ResetGame(string scene)
     {
-        UIController.instance.PlayGame();
+        UIController.instance.LoadSelectedScene(scene);
     }
 
     public void Quit()
@@ -23,9 +23,9 @@ public class EndGamePanel : MonoBehaviour
         UIController.instance.ExitGame();          
     }
 
-    public void Menu()
+    public void Menu(string scene)
     {
-        UIController.instance.Menu();
+        UIController.instance.LoadSelectedScene(scene);
     }
 
 }

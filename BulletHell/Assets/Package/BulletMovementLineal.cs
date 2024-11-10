@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletMovementLineal : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 3f;
     public Vector3 direction;
 
     // Update is called once per frame

@@ -7,7 +7,7 @@ public class BulletSpawnerLineal : MonoBehaviour
     public Transform player;
     public float timer = 0f;
     public float cooldown = 0.5f;
-    public float speed = 1.5f;
+    public float speed = 3f;
     public float rangeOfVision = 8.5f;
 
     public void Awake()
