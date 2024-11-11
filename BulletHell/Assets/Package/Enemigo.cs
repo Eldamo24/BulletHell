@@ -10,11 +10,13 @@ public class Enemigo : MonoBehaviour
     public float movementSpeed = 3f;
     public Transform player;
     public Rigidbody2D rb;
+    public Animator anim;
 
     private void Awake()
     {
         spawner = FindObjectOfType<EnemySpawner>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -32,7 +34,9 @@ public class Enemigo : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            health = 0;
+            anim.SetBool("isDead", true);
+            Destroy(gameObject, 2f);
         }
     }
 

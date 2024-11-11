@@ -19,9 +19,12 @@ public class UIController : MonoBehaviour
     void Start()
     {
         instance = this;
-        UpdateEnemiesText();
-        UpdateLifeText(100);
         defaultCursor = null;
+        if(SceneManager.GetActiveScene().name == "Prototype" || SceneManager.GetActiveScene().name == "Level1")
+        {
+            UpdateEnemiesText();
+            UpdateLifeText(100);
+        }
     }
 
     public void PlayGame()

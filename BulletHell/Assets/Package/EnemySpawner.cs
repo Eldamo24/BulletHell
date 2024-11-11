@@ -6,7 +6,6 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public int maxEnemies = 3;
     private int enemyCount = 0;
-    private int enemiesDead = 0;
     private int amountOfEnemies = 20;
     private int enemyTotalCounter = 0;
 
@@ -29,7 +28,6 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab[index], spawnPoint.position, spawnPoint.rotation);
             enemy.GetComponent<Enemigo>().spawnPos = spawnPoint.GetComponent<IsOcuppied>();
             enemy.GetComponent<Enemigo>().spawnPos.IsTheSpawnerOcuppied();
-            //spawnPoint.gameObject.GetComponent<IsOcuppied>().IsTheSpawnerOcuppied();
             enemyCount++;
             enemyTotalCounter++;
         }
