@@ -49742,7 +49742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enemies defeated:'
+  m_text: 'Enemies defeated: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdba49ed138e9a4ebaf87887bf5d686, type: 2}
   m_sharedMaterial: {fileID: 6018375469344499233, guid: cbdba49ed138e9a4ebaf87887bf5d686, type: 2}

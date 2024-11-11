@@ -12,6 +12,7 @@ TagManager:
   - EnemyShootB
   - Shield
   - Saw
+  - Positions
   layers:
   - Default
   - TransparentFX
