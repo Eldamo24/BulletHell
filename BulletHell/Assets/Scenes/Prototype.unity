@@ -1527,7 +1527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3690722179232257075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,11 +1824,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  shootsAmount: 15
-  bullet1: {fileID: 6615216866800980131, guid: 0b78d5e7e51b4524ca8184c6c133e5a6, type: 3}
-  bullet2: {fileID: 1847200451493823975, guid: c1bfc9678db796f4e9d695f6ba095cc1, type: 3}
-  beams: {fileID: 5378627958043018841, guid: 979537228a841424c8a545cb590f2132, type: 3}
-  player: {fileID: 0}
 --- !u!114 &4683916026634557357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,7 +2359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6866372738014982730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2434,7 +2429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &7153147559664350613
 GameObject:
   m_ObjectHideFlags: 0

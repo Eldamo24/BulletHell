@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
         defaultCursor = null;
         if(SceneManager.GetActiveScene().name == "Prototype" || SceneManager.GetActiveScene().name == "Level1")
         {
-            UpdateEnemiesText();
+            //UpdateEnemiesText();
             UpdateLifeText(100);
         }
     }
@@ -74,9 +74,14 @@ public class UIController : MonoBehaviour
 
     public void WinOrDefeat()
     {
+        Invoke("EndGame", 3f);
+    }
+
+    void EndGame()
+    {
+        Time.timeScale = 0f;
         EndGamePanel.SetActive(true);
         InGameUI.SetActive(false);
-        Time.timeScale = 0f;
     }
 
     public void LoadSelectedScene(string scene)

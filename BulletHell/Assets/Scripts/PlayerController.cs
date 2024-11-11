@@ -45,7 +45,12 @@ public class PlayerController : MonoBehaviour
     {
         if (life <= 0)
         {
+            GetComponent<BoxCollider2D>().enabled = false;
+            anim.SetTrigger("death");
+            shieldA.SetActive(false);
+            shieldB.SetActive(false);
             GameManager.instance.CheckLoose();
+            this.enabled = false;
         }
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
