@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public GameObject saw1;
     public GameObject saw2;
 
+    [Header("Animation")]
+    public Animator anim;
+
     public int life = 100;
 
     void Start()
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
         canUseExplosion = true;
         shieldA.SetActive(true);
         shieldB.SetActive(false);
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             Shoot();
+            anim.SetTrigger("attack");
         }
         if (Input.GetKeyDown(KeyCode.E) && canUseExplosion)
         {
@@ -120,6 +125,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         life -= 10;
+        anim.SetTrigger("hit");
         UIController.instance.UpdateLifeText(life);
     }
 
