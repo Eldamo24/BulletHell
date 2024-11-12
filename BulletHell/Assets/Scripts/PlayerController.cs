@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator anim;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip audioclipAttack;
+
     public int life = 9;
 
     void Start()
@@ -39,6 +43,7 @@ public class PlayerController : MonoBehaviour
         shieldA.SetActive(true);
         shieldB.SetActive(false);
         anim = GetComponent<Animator>();
+        audioSource = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -87,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         canShoot = false;
         Instantiate(shoot, shootPosition.position, Quaternion.identity);
+        audioSource.PlayOneShot(audioclipAttack);
         Invoke("CoolDownShoot", coolDownTime);
     }
 

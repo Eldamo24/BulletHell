@@ -6,6 +6,14 @@ using UnityEngine;
 public class TextButtonsColor : MonoBehaviour
 {
 
+    public AudioClip buttonSound;
+    public AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GameObject.Find("Audio").GetComponent<AudioSource>();
+    }
+
     public void OnMouseOver()
     {
         TMP_Text text = GetComponentInChildren<TMP_Text>();
@@ -18,5 +26,10 @@ public class TextButtonsColor : MonoBehaviour
         TMP_Text text = GetComponentInChildren<TMP_Text>();
         text.color = Color.white;
         UIController.instance.SetCursorExit();
+    }
+
+    public void ClickButton()
+    {
+        audioSource.PlayOneShot(buttonSound);
     }
 }

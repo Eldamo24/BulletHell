@@ -135,6 +135,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 0}
   anim: {fileID: 0}
+  audioSource: {fileID: 0}
+  clipHit: {fileID: 8300000, guid: 7d0ccef004f43e24aa4af6d494c09d5b, type: 3}
 --- !u!61 &-3775344617814872176
 BoxCollider2D:
   m_ObjectHideFlags: 0

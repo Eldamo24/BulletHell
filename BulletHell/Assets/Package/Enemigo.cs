@@ -11,6 +11,8 @@ public class Enemigo : MonoBehaviour
     public Transform player;
     public Rigidbody2D rb;
     public Animator anim;
+    public AudioSource audioSource;
+    public AudioClip clipHit;
 
     private void Awake()
     {
@@ -25,6 +27,7 @@ public class Enemigo : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
+        audioSource = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -35,8 +38,10 @@ public class Enemigo : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        audioSource.PlayOneShot(clipHit);
         if (health <= 0)
         {
+            GetComponent<BoxCollider2D>().enabled = false;
             health = 0;
             if (gameObject.name == "Beholder(Clone)")
             {

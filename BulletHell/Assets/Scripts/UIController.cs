@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Prototype" || SceneManager.GetActiveScene().name == "Level1")
         {
            //UpdateEnemiesText();
-           UpdateLifeText(9);
+           //UpdateLifeText(9);
            UpdateLifeBar(9);
         }
     }

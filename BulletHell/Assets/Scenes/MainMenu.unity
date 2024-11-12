@@ -471,6 +471,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125043394}
   m_CullTransparentMesh: 1
+--- !u!1 &149270111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149270113}
+  - component: {fileID: 149270112}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &149270112
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149270111}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 74ad2acb21d55c9438b263839266189e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &149270113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149270111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &224468128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &895827646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,6 +1827,18 @@ MonoBehaviour:
         - m_Target: {fileID: 895827645}
           m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
           m_MethodName: OnMouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 895827645}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2295,6 +2437,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 101606024}
   EndGamePanel: {fileID: 0}
   InGameUI: {fileID: 0}
+  lifeBars: []
   enemiesAmountText: {fileID: 0}
   lifeText: {fileID: 0}
   cursorHandTexture: {fileID: 2800000, guid: ea67b57502e530343b8ff3b787aa480f, type: 3}
@@ -3330,6 +3473,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1408127145}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1408127145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,6 +3497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1466753919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,6 +3773,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1485819700}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1485819700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3628,6 +3797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1526502428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,6 +3995,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1526502434}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1526502434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,6 +4019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1744985647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,6 +4217,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1744985653}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1744985653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4044,6 +4241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &1881407131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,6 +4345,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1881407134}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1881407134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4158,6 +4369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &1881407135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,6 +4837,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2080334936}
+          m_TargetAssemblyTypeName: TextButtonsColor, Assembly-CSharp
+          m_MethodName: ClickButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2080334936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4636,6 +4861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e1b6c2bae9dcc4598761a9c806bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: e16ee6b0dd5a71744a4d24443bfd5959, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &2080334937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4737,3 +4964,4 @@ SceneRoots:
   - {fileID: 266916926}
   - {fileID: 1122831985}
   - {fileID: 681581051}
+  - {fileID: 149270113}
