@@ -15,17 +15,20 @@ public class EndGamePanel : MonoBehaviour
 
     public void ResetGame(string scene)
     {
-        UIController.instance.LoadSelectedScene(scene);
+        if(UIController.instance != null)
+            UIController.instance.LoadSelectedScene(scene);
     }
 
     public void Quit()
     {
-        UIController.instance.ExitGame();          
+        if (UIController.instance != null)
+            UIController.instance.ExitGame();          
     }
 
     public void Menu(string scene)
     {
-        UIController.instance.LoadSelectedScene(scene);
+        if (UIController.instance != null)
+            UIController.instance.LoadSelectedScene(scene);
     }
 
 }

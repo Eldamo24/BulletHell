@@ -22,7 +22,7 @@ public class BulletSpawner : MonoBehaviour
 
         cooldown -= Time.deltaTime;
 
-        if (cooldown <= 0f)
+        if (cooldown <= 0f && !GetComponentInParent<Enemigo>().isDead)
         {
             ShootCircle();
             cooldown = fireRate;
@@ -37,6 +37,7 @@ public class BulletSpawner : MonoBehaviour
                 angle = currentAngle + (i * (360f / bulletAmount));
                 Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
                 GameObject bulletPrefab = Instantiate(bullet, transform.position, rotation);
+                Destroy(bulletPrefab, 10f);
                 EnemyBullet bulletMovement = bulletPrefab.GetComponent<EnemyBullet>();
                 bulletMovement.SetSpeed(bulletSpeed);
             }

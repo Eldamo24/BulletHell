@@ -138,15 +138,20 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         life -= 1;
-        UIController.instance.UpdateLifeBar(life);
+        if (UIController.instance != null)
+        {
+            UIController.instance.UpdateLifeBar(life);
+        }
         anim.SetTrigger("hit");
-        //UIController.instance.UpdateLifeText(life);
     }
 
     public void OneShot()
     {
         life -= 9;
-        UIController.instance.UpdateLifeBar(life);
+        if(UIController.instance != null)
+        {
+            UIController.instance.UpdateLifeBar(life);
+        }
     }
 
     public void Health(int cure)
@@ -157,6 +162,9 @@ public class PlayerController : MonoBehaviour
             life = 9;
         }
         //UIController.instance.UpdateLifeText(life);
-        UIController.instance.UpdateLifeBar(life);
+        if(UIController.instance != null)
+        {
+            UIController.instance.UpdateLifeBar(life);
+        }
     }
 }

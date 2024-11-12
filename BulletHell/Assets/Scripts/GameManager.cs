@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     public void AddEnemyDefeated()
     {
         enemiesDefeated++;
-        UIController.instance.UpdateEnemiesText();
+        if (UIController.instance != null) 
+        {
+            UIController.instance.UpdateEnemiesText();
+        }
         CheckWin();
     }
 
@@ -25,13 +28,19 @@ public class GameManager : MonoBehaviour
         if(enemiesDefeated >= 21)
         {
             isWinner = true;
-            UIController.instance.WinOrDefeat();
+            if (UIController.instance != null) 
+            {
+                UIController.instance.WinOrDefeat();
+            }
         }
     }
 
     public void CheckLoose()
     {
         isWinner = false;
-        UIController.instance.WinOrDefeat();
+        if (UIController.instance != null)
+        {
+            UIController.instance.WinOrDefeat();
+        }
     }
 }

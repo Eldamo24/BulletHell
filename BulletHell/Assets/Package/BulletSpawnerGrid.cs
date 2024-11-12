@@ -10,13 +10,6 @@ public class BulletSpawnerGrid : MonoBehaviour
     public int seconds = 0;
     private GameObject spawnedBullet;
     private float timer = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -40,16 +33,14 @@ public class BulletSpawnerGrid : MonoBehaviour
     }
 
     private void FireYellow()
+    {
+        if (bullet != null)
         {
-            if (bullet != null)
-            {
-                spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-                spawnedBullet.GetComponent<BulletMovementGrid>().speed = speed;
-                spawnedBullet.transform.rotation = transform.rotation;
-
-            }
-
+            spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            spawnedBullet.GetComponent<BulletMovementGrid>().speed = speed;
+            spawnedBullet.transform.rotation = transform.rotation;
         }
+    }
 
     private void FireGreen()
     {

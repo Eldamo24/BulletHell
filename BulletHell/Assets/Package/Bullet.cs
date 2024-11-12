@@ -22,7 +22,6 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            Debug.Log(enemy.health);
             Destroy(gameObject);//Busca la funcion accediendo al componente (script) de la bala.
         }
     }

@@ -14,6 +14,7 @@ public class Enemigo : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip clipHit;
     public AudioClip clipDeath;
+    public bool isDead = false;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class Enemigo : MonoBehaviour
         audioSource.PlayOneShot(clipHit);
         if (health <= 0)
         {
+            isDead = true;
             audioSource.PlayOneShot(clipDeath);
             GetComponent<BoxCollider2D>().enabled = false;
             health = 0;

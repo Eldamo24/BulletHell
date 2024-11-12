@@ -35,6 +35,7 @@ public class BulletSpawnerLineal : MonoBehaviour
     public void Shoot()
     {
         GameObject bulletPrefab = Instantiate(bullet, transform.position, transform.rotation);
+        Destroy(bulletPrefab, 15f);
         Vector3 direction = (player.position - transform.position).normalized;
         bulletPrefab.GetComponent<BulletMovementLineal>().SetDirection(direction, speed);
     }
