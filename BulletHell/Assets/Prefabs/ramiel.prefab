@@ -296,6 +296,9 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: 0}
   anim: {fileID: 0}
+  audioSource: {fileID: 0}
+  clipHit: {fileID: 8300000, guid: 0713cbdeae54c1d47889f567470e849e, type: 3}
+  clipDeath: {fileID: 8300000, guid: 9c9e738e78487c947a2db548ee127288, type: 3}
 --- !u!114 &1850342534259884986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +318,8 @@ MonoBehaviour:
   lasersPosition:
   - {fileID: 2654197743737891293}
   - {fileID: 5827253327442615033}
+  audioSource: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: fb5062e08b8dc1d4f93747fd1365094f, type: 3}
 --- !u!1 &6267995549686344684
 GameObject:
   m_ObjectHideFlags: 0

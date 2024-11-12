@@ -10,8 +10,13 @@ public class ExplosionController : MonoBehaviour
     public Vector2 actualScale;
     public Vector2 targetScale;
 
+    public AudioSource audioSource;
+    public AudioClip explosionSound;
+
     private void OnEnable()
     {
+        audioSource =  GameObject.Find("SFX").GetComponent<AudioSource>();
+        audioSource.PlayOneShot(explosionSound);
         actualScale = transform.localScale;
         StartCoroutine("ScaleObject");
     }

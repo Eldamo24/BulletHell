@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 836764487
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0.12657738, a: 1}
@@ -138,6 +138,8 @@ MonoBehaviour:
   duration: 2
   actualScale: {x: 0, y: 0}
   targetScale: {x: 10, y: 10}
+  audioSource: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 2b8a4ccddc935ee4f98865bf5cc38f38, type: 3}
 --- !u!50 &7310847705863408269
 Rigidbody2D:
   serializedVersion: 4

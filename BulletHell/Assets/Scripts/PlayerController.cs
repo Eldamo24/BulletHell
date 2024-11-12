@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip audioclipAttack;
+    public AudioClip audioclipDeath;
 
     public int life = 9;
 
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if (life <= 0)
         {
+            audioSource.PlayOneShot(audioclipDeath);
             GetComponent<BoxCollider2D>().enabled = false;
             anim.SetTrigger("death");
             shieldA.SetActive(false);
@@ -144,6 +146,7 @@ public class PlayerController : MonoBehaviour
     public void OneShot()
     {
         life -= 9;
+        UIController.instance.UpdateLifeBar(life);
     }
 
     public void Health(int cure)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 187898370153889587}
   m_Layer: 0
   m_Name: Saw 2
-  m_TagString: Player
+  m_TagString: Saw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 710409272775659774}
   m_Layer: 0
   m_Name: Saw 1
-  m_TagString: Player
+  m_TagString: Saw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -419,7 +419,11 @@ MonoBehaviour:
   shieldB: {fileID: 6191817743000901661}
   saw1: {fileID: 4617299272626361748}
   saw2: {fileID: 1613385186920490508}
-  life: 100
+  anim: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioclipAttack: {fileID: 8300000, guid: 9c3d4da2d8e639d45bcfe7cbf5a8e4cf, type: 3}
+  audioclipDeath: {fileID: 8300000, guid: 0b6267f58191ffa4b9d6bbd154c38847, type: 3}
+  life: 9
 --- !u!50 &8735488522772809283
 Rigidbody2D:
   serializedVersion: 4

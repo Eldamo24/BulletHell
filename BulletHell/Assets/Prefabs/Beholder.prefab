@@ -156,6 +156,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   audioSource: {fileID: 0}
   clipHit: {fileID: 8300000, guid: 234eadfb051078d4cbf9d2ab0d01a890, type: 3}
+  clipDeath: {fileID: 8300000, guid: 3709d01f956e44648b483b89a52645e5, type: 3}
 --- !u!50 &-2078358003980083565
 Rigidbody2D:
   serializedVersion: 4

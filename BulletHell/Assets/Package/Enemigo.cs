@@ -13,6 +13,7 @@ public class Enemigo : MonoBehaviour
     public Animator anim;
     public AudioSource audioSource;
     public AudioClip clipHit;
+    public AudioClip clipDeath;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class Enemigo : MonoBehaviour
         audioSource.PlayOneShot(clipHit);
         if (health <= 0)
         {
+            audioSource.PlayOneShot(clipDeath);
             GetComponent<BoxCollider2D>().enabled = false;
             health = 0;
             if (gameObject.name == "Beholder(Clone)")
@@ -52,7 +54,6 @@ public class Enemigo : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            
         }
     }
 

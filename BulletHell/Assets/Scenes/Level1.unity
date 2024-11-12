@@ -407,22 +407,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 727138127903206155, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
-      propertyPath: life
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 727138127903206155, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1920721262}
-    - target: {fileID: 727138127903206155, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
-      propertyPath: audioclipAttack
-      value: 
-      objectReference: {fileID: 8300000, guid: 9c3d4da2d8e639d45bcfe7cbf5a8e4cf, type: 3}
-    - target: {fileID: 1613385186920490508, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
-      propertyPath: m_TagString
-      value: Saw
-      objectReference: {fileID: 0}
     - target: {fileID: 4420537236315056358, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -462,10 +446,6 @@ PrefabInstance:
     - target: {fileID: 4420537236315056358, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4617299272626361748, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
-      propertyPath: m_TagString
-      value: Saw
       objectReference: {fileID: 0}
     - target: {fileID: 4625475646717194395, guid: ef4c1cfccc700304aa54e6e57e9b147f, type: 3}
       propertyPath: m_Name
@@ -21679,7 +21659,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

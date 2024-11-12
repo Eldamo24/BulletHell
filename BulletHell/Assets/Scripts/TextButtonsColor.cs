@@ -18,14 +18,16 @@ public class TextButtonsColor : MonoBehaviour
     {
         TMP_Text text = GetComponentInChildren<TMP_Text>();
         text.color = Color.red;
-        UIController.instance.SetCursorOver();
+        if(UIController.instance != null)
+            UIController.instance.SetCursorOver();
     }
 
     public void OnMouseExit()
     {
         TMP_Text text = GetComponentInChildren<TMP_Text>();
         text.color = Color.white;
-        UIController.instance.SetCursorExit();
+        if (UIController.instance != null)
+            UIController.instance.SetCursorExit();
     }
 
     public void ClickButton()

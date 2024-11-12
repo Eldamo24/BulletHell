@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     {
         if(enemiesDefeated >= 21)
         {
-            FindObjectOfType<PlayerController>().GetComponent<BoxCollider2D>().enabled = false;
             isWinner = true;
             UIController.instance.WinOrDefeat();
         }
