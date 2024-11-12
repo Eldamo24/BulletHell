@@ -16,7 +16,7 @@ public class Enemigo : MonoBehaviour
     {
         spawner = FindObjectOfType<EnemySpawner>();
         rb = GetComponent<Rigidbody2D>();
-        if (gameObject.name == "beholder(Clone)")
+        if (gameObject.name == "Beholder(Clone)")
             anim = GetComponent<Animator>();
         else
             anim = null;
@@ -38,9 +38,9 @@ public class Enemigo : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            if(gameObject.name == "beholder(Clone)")
+            if (gameObject.name == "Beholder(Clone)")
             {
-                anim.SetBool("isDead", true);
+                anim.SetBool("isDeath", true);
                 Destroy(gameObject, 2f);
             }
             else

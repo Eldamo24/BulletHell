@@ -34,7 +34,10 @@ public class ExplosionController : MonoBehaviour
     {
         if (!collision.CompareTag("Player") && !collision.CompareTag("Shield") && !collision.CompareTag("Saw"))
         {
-            Destroy(collision.gameObject);
+            if(collision.GetComponent<BossController>() == null)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 

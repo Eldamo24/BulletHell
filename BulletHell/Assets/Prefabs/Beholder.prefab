@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2078358003980083565}
   - component: {fileID: 8644227714528701632}
   m_Layer: 0
-  m_Name: beholder
+  m_Name: Beholder
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,10 +149,11 @@ MonoBehaviour:
   health: 100
   spawner: {fileID: 0}
   spawnPos: {fileID: 0}
-  maxDistance: 8
+  maxDistance: 7
   movementSpeed: 2
   player: {fileID: 0}
   rb: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!50 &-2078358003980083565
 Rigidbody2D:
   serializedVersion: 4

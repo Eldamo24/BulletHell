@@ -8,6 +8,14 @@ public class EnemySpawner : MonoBehaviour
     private int enemyCount = 0;
     private int amountOfEnemies = 20;
     private int enemyTotalCounter = 0;
+    public Transform[] spawnBoss;
+    public GameObject[] bossPrefab;
+    public bool bossSpawned;
+
+    private void Start()
+    {
+        bossSpawned = false;
+    }
 
 
     // Update is called once per frame
@@ -16,6 +24,10 @@ public class EnemySpawner : MonoBehaviour
         if (enemyCount < maxEnemies && enemyTotalCounter < amountOfEnemies)
         {
             SpawnEnemy();
+        }
+        if (GameManager.instance.enemiesDefeated >= 20 && !bossSpawned)
+        {
+            SpawnBoss();
         }
     }
 
@@ -36,5 +48,15 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         enemyCount--;
+    }
+
+    public void SpawnBoss()
+    {
+        Transform spawnBos = spawnBoss[Random.Range(0, spawnBoss.Length)];
+        int index = Random.Range(0, bossPrefab.Length);
+        GameObject boss = Instantiate(bossPrefab[index], spawnBos.position, Quaternion.identity);
+        boss.GetComponent<Enemigo>().spawnPos = spawnBos.GetComponent<IsOcuppied>();
+        boss.GetComponent<Enemigo>().spawnPos.IsTheSpawnerOcuppied();
+        bossSpawned = true;
     }
 }

@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator anim;
 
-    public int life = 100;
+    public int life = 9;
 
     void Start()
     {
@@ -129,17 +129,25 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage()
     {
-        life -= 10;
+        life -= 1;
+        UIController.instance.UpdateLifeBar(life);
         anim.SetTrigger("hit");
-        UIController.instance.UpdateLifeText(life);
+        //UIController.instance.UpdateLifeText(life);
+    }
+
+    public void OneShot()
+    {
+        life -= 9;
     }
 
     public void Health(int cure)
     {
         life += cure;
-        if (life >= 100)
+        if (life >= 9)
         {
-            life = 100;
+            life = 9;
         }
+        //UIController.instance.UpdateLifeText(life);
+        UIController.instance.UpdateLifeBar(life);
     }
 }

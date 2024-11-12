@@ -2297,7 +2297,7 @@ MonoBehaviour:
   InGameUI: {fileID: 0}
   enemiesAmountText: {fileID: 0}
   lifeText: {fileID: 0}
-  cursorHandTexture: {fileID: 2800000, guid: 7fdcee28328ab094f9ca992d3b4e70bc, type: 3}
+  cursorHandTexture: {fileID: 2800000, guid: ea67b57502e530343b8ff3b787aa480f, type: 3}
 --- !u!1 &1187478609
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject EndGamePanel;
     public GameObject InGameUI;
+    public GameObject[] lifeBars;
     public TMP_Text enemiesAmountText;
     public TMP_Text lifeText;
     public Texture2D cursorHandTexture;
@@ -22,8 +23,9 @@ public class UIController : MonoBehaviour
         defaultCursor = null;
         if(SceneManager.GetActiveScene().name == "Prototype" || SceneManager.GetActiveScene().name == "Level1")
         {
-            //UpdateEnemiesText();
-            UpdateLifeText(100);
+           //UpdateEnemiesText();
+           UpdateLifeText(9);
+           UpdateLifeBar(9);
         }
     }
 
@@ -97,5 +99,20 @@ public class UIController : MonoBehaviour
     public void SetCursorExit()
     {
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void UpdateLifeBar(int health)
+    {
+        for (int i = 0; i < lifeBars.Length; i++) 
+        {
+            if(i < health)
+            {
+                lifeBars[i].SetActive(true);
+            }
+            else
+            {
+                lifeBars[i].SetActive(false);
+            }
+        }
     }
 }

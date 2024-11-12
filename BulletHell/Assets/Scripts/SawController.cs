@@ -14,7 +14,10 @@ public class SawController : MonoBehaviour
     {
         if(collision.CompareTag("Enemy") || collision.CompareTag("EnemyShoot"))
         {
-            Destroy(collision.gameObject);
+            if(collision.GetComponent<BossController>() == null)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

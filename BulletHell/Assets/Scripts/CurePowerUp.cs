@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CurePowerUp : MonoBehaviour
 {
-    public int cure = 30;
+    public int cure = 3;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
