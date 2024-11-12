@@ -5,7 +5,7 @@ public class SpawnPowerUpManager : MonoBehaviour
 {
     public List<GameObject> powerUps;
     public List<Transform> spawnPoints;
-    private float luckyPercentage = 50;
+    public float luckyPercentage = 50;
     private float coolDown = 30;
     private float waitTime = 0;
     public GameObject powerUp;
