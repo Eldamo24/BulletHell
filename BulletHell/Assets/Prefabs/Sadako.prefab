@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2017816257
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 62aef9eee3fb70845ae5e74e432d3459, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   clipHit: {fileID: 8300000, guid: 7d0ccef004f43e24aa4af6d494c09d5b, type: 3}
   clipDeath: {fileID: 8300000, guid: 0c5ef901a152fc04f8bc96b020cd1651, type: 3}
+  isDead: 0
 --- !u!61 &-3775344617814872176
 BoxCollider2D:
   m_ObjectHideFlags: 0
