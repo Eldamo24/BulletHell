@@ -38,8 +38,16 @@ public class EnemySpawner : MonoBehaviour
         {
             int index = Random.Range(0, enemyPrefab.Length);
             GameObject enemy = Instantiate(enemyPrefab[index], spawnPoint.position, spawnPoint.rotation);
-            enemy.GetComponent<Enemigo>().spawnPos = spawnPoint.GetComponent<IsOcuppied>();
-            enemy.GetComponent<Enemigo>().spawnPos.IsTheSpawnerOcuppied();
+            if(enemy.TryGetComponent<Enemigo>(out Enemigo enemigo))
+            {
+                enemigo.spawnPos = spawnPoint.GetComponent<IsOcuppied>();
+                enemigo.spawnPos.IsTheSpawnerOcuppied();
+            }
+            if(enemy.TryGetComponent<LastEnemyBehaviour>(out LastEnemyBehaviour behaviour))
+            {
+                behaviour.spawnPos = spawnPoint.GetComponent<IsOcuppied>();
+                behaviour.spawnPos.IsTheSpawnerOcuppied();
+            }
             enemyCount++;
             enemyTotalCounter++;
         }

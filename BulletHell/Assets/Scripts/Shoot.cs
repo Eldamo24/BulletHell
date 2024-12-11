@@ -25,7 +25,14 @@ public class Shoot : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Enemigo>().TakeDamage(damage);
+            if(collision.TryGetComponent<Enemigo>(out Enemigo enemy))
+            {
+                enemy.TakeDamage(damage);
+            }
+            if (collision.TryGetComponent<LastEnemyBehaviour>(out LastEnemyBehaviour enemigo))
+            {
+                enemigo.TakeDamage(damage);
+            }
             Destroy(gameObject);
         }
     }
