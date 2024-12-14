@@ -1,16 +1,17 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndGamePanel : MonoBehaviour
 {
-    public TMP_Text panelText;
+    public Sprite[] backImages;
 
     void OnEnable()
     {
-        if(GameManager.instance.isWinner)
-            panelText.text = "Victory";
+        if (GameManager.instance.isWinner)
+            gameObject.GetComponent<Image>().sprite = backImages[0];
         else
-            panelText.text = "Defeat";
+            gameObject.GetComponent<Image>().sprite = backImages[1];
     }
 
     public void ResetGame(string scene)

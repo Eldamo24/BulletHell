@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8675997135070434440}
   - component: {fileID: 6220161878114408066}
   - component: {fileID: 2512645679868900407}
-  - component: {fileID: 5808288300427467742}
+  - component: {fileID: 5849347552293951410}
   m_Layer: 0
   m_Name: SawPowerUp
   m_TagString: Untagged
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: a415cb1b7ea306340a33e1a1c0291cc3, type: 3}
---- !u!61 &5808288300427467742
+--- !u!61 &5849347552293951410
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,5 +143,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0

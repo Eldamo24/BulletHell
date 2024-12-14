@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 125258983895376493}
   - component: {fileID: 5701318486637994993}
   - component: {fileID: 2308051492051533948}
-  - component: {fileID: 2828679619997465792}
+  - component: {fileID: 6482413689954850139}
   m_Layer: 0
   m_Name: CurePowerUP
   m_TagString: Untagged
@@ -101,7 +101,7 @@ MonoBehaviour:
   cure: 3
   audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: a415cb1b7ea306340a33e1a1c0291cc3, type: 3}
---- !u!61 &2828679619997465792
+--- !u!61 &6482413689954850139
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,5 +144,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
