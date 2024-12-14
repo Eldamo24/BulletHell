@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 125258983895376493}
   - component: {fileID: 5701318486637994993}
   - component: {fileID: 2308051492051533948}
-  - component: {fileID: 7941076001700009261}
+  - component: {fileID: 2828679619997465792}
   m_Layer: 0
   m_Name: CurePowerUP
   m_TagString: Untagged
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -274387947
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.8888321, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 84f9d70b118e7544b8398425932881bb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   cure: 3
   audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: a415cb1b7ea306340a33e1a1c0291cc3, type: 3}
---- !u!61 &7941076001700009261
+--- !u!61 &2828679619997465792
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,5 +144,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
