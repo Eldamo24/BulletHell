@@ -31,7 +31,7 @@ public class BulletSpawner : MonoBehaviour
 
     public void ShootCircle()
     {
-            for (int i = 0; i < bulletAmount; i++)
+        for (int i = 0; i < bulletAmount; i++)
             {
                 float angle = 0f;
                 angle = currentAngle + (i * (360f / bulletAmount));

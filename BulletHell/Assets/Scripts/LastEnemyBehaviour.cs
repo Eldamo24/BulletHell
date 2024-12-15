@@ -19,15 +19,26 @@ public class LastEnemyBehaviour : MonoBehaviour
 
     public EnemySpawner spawner;
     public IsOcuppied spawnPos;
+    public bool isDead = false;
+
+    [Header("Animations")]
+    private Animator anim;
+
+    [Header("Sounds")]
+    public AudioClip clipHit;
+    public AudioClip clipDeath;
+    public AudioSource audioSource;
 
     private void Awake()
     {
         spawner = FindObjectOfType<EnemySpawner>();
+        anim = GetComponent<Animator>();
+        audioSource = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (!reached)
+        if (!reached && !isDead)
         {
             if (!calculatedPosition)
             {
@@ -36,19 +47,24 @@ public class LastEnemyBehaviour : MonoBehaviour
             }
             else
             {
+                anim.SetBool("movement", true);
                 transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
                 if (transform.position == newPosition)
                 {
                     reached = true;
+                    anim.SetBool("movement", false);
                 }
             }
         }
         else
         {
-            if (!invoked)
+            if (!isDead)
             {
-                Invoke("GenerateSpiral",2f);
-                invoked = true;
+                if (!invoked)
+                {
+                    Invoke("GenerateSpiral", 2f);
+                    invoked = true;
+                }
             }
         }
     }
@@ -62,6 +78,7 @@ public class LastEnemyBehaviour : MonoBehaviour
     {
         float angleStep = 360f / totalProjectiles;
         int index = Random.Range(0, projectilePrefab.Length);
+        anim.SetTrigger("attack");
         for (int i = 0; i < totalProjectiles; i++)
         {
 
@@ -87,23 +104,17 @@ public class LastEnemyBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        //audioSource.PlayOneShot(clipHit);
+        anim.SetTrigger("damage");
+        audioSource.PlayOneShot(clipHit);
         if (health <= 0)
         {
-            Destroy(gameObject);
-            //isDead = true;
-            //audioSource.PlayOneShot(clipDeath);
-            //GetComponent<BoxCollider2D>().enabled = false;
-            //health = 0;
-            //if (gameObject.name == "Beholder(Clone)")
-            //{
-            //    anim.SetBool("isDeath", true);
-            //    Destroy(gameObject, 2f);
-            //}
-            //else
-            //{
-            //    Destroy(gameObject);
-            //}
+            
+            isDead = true;
+            audioSource.PlayOneShot(clipDeath);
+            GetComponent<BoxCollider2D>().enabled = false;
+            health = 0;
+            anim.SetBool("isDeath", true);
+            Destroy(gameObject, 2f);
         }
     }
 

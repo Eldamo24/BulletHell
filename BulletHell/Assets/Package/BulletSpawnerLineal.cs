@@ -23,7 +23,7 @@ public class BulletSpawnerLineal : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
             transform.rotation = Quaternion.Euler(0, 0, angle);
             timer += Time.deltaTime;
-            if (timer > cooldown)
+            if (timer > cooldown && !GetComponentInParent<Enemigo>().isDead)
             {
                 timer = 0f;
                 Shoot();
@@ -34,6 +34,7 @@ public class BulletSpawnerLineal : MonoBehaviour
 
     public void Shoot()
     {
+        GetComponentInParent<Animator>().SetTrigger("attack");
         GameObject bulletPrefab = Instantiate(bullet, transform.position, transform.rotation);
         Destroy(bulletPrefab, 15f);
         Vector3 direction = (player.position - transform.position).normalized;

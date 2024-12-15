@@ -17,6 +17,10 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.x < -8f || transform.position.x > 8f)
+        {
+            speed *= -1;
+        }
         transform.position += Vector3.right * speed * Time.deltaTime;
         if(Time.time > waitTime)
         {

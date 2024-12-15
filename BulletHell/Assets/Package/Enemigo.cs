@@ -20,10 +20,7 @@ public class Enemigo : MonoBehaviour
     {
         spawner = FindObjectOfType<EnemySpawner>();
         rb = GetComponent<Rigidbody2D>();
-        if (gameObject.name == "Beholder(Clone)")
-            anim = GetComponent<Animator>();
-        else
-            anim = null;
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -41,21 +38,16 @@ public class Enemigo : MonoBehaviour
     {
         health -= damage;
         audioSource.PlayOneShot(clipHit);
+        if(gameObject.name != "Beholder(Clone)")
+            anim.SetTrigger("damage");
         if (health <= 0)
         {
             isDead = true;
             audioSource.PlayOneShot(clipDeath);
             GetComponent<BoxCollider2D>().enabled = false;
             health = 0;
-            if (gameObject.name == "Beholder(Clone)")
-            {
-                anim.SetBool("isDeath", true);
-                Destroy(gameObject, 2f);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            anim.SetBool("isDeath", true);
+            Destroy(gameObject, 2f);
         }
     }
 
