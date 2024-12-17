@@ -29,9 +29,12 @@ public class LastEnemyBehaviour : MonoBehaviour
     public AudioClip clipDeath;
     public AudioSource audioSource;
 
+    private BoxCollider2D enemyCollider;
+
     private void Awake()
     {
         spawner = FindObjectOfType<EnemySpawner>();
+        enemyCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         audioSource = GameObject.Find("SFX").GetComponent<AudioSource>();
     }
@@ -48,11 +51,13 @@ public class LastEnemyBehaviour : MonoBehaviour
             else
             {
                 anim.SetBool("movement", true);
+                enemyCollider.enabled = false;
                 transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
                 if (transform.position == newPosition)
                 {
                     reached = true;
                     anim.SetBool("movement", false);
+                    enemyCollider.enabled = true;
                 }
             }
         }
