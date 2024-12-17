@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2981,7 +2981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1950b38f36e6de34c9b40c92d86b1fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelText: {fileID: 8194257438339887486}
+  backImages:
+  - {fileID: 21300000, guid: 2b93fba6071c78942963dfb97d92cd37, type: 3}
+  - {fileID: 21300000, guid: a361edeb0f1e67149a57bd471ffa3eee, type: 3}
 --- !u!114 &5037763889247844951
 MonoBehaviour:
   m_ObjectHideFlags: 0
